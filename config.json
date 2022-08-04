@@ -1,0 +1,30 @@
+{
+  "data_label" : [
+	"text", "sentiment"
+  ],
+  "cm_label" : [
+	["정답 클래스 0(부정)","정답 클래스 1(중립)","정답 클래스 2(긍정)"],
+	["예측 클래스 0(부정)","예측 클래스 1(중립)","예측 클래스 2(긍정)"]
+  ],
+  "id2num" : {
+	"부정" : 0,
+	"중립" : 1,
+	"긍정" : 2
+  },
+  "label2id" : {
+	"LABEL_0" : "부정",
+	"LABEL_1" : "중립",
+	"LABEL_2" : "긍정"
+  },
+  "function_to_apply" : "softmax",
+  "pretrained_model" : "monologg/koelectra-small-v3-discriminator",
+  "trained_model" : "jinwooChoi/SKKU_SENTIMENT",
+  "huggingface_token" : "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",
+  "data_path" : "test.csv",
+  "num_labels" : 3,
+  "epochs" : 1,
+  "batch_size" : 32,
+  "learning_rate" : 5e-5,
+  "max_length" : 256,
+  "test_size" : 0.2
+}

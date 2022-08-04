@@ -1,0 +1,30 @@
+{
+  "data_label" : [
+	"text", "sentiment"
+  ],
+  "cm_label" : [
+	["���� Ŭ���� 0(����)","���� Ŭ���� 1(�߸�)","���� Ŭ���� 2(����)"],
+	["���� Ŭ���� 0(����)","���� Ŭ���� 1(�߸�)","���� Ŭ���� 2(����)"]
+  ],
+  "id2num" : {
+	"����" : 0,
+	"�߸�" : 1,
+	"����" : 2
+  },
+  "label2id" : {
+	"LABEL_0" : "����",
+	"LABEL_1" : "�߸�",
+	"LABEL_2" : "����"
+  },
+  "function_to_apply" : "softmax",
+  "pretrained_model" : "monologg/koelectra-small-v3-discriminator",
+  "trained_model" : "jinwooChoi/SKKU_SENTIMENT",
+  "huggingface_token" : "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",
+  "data_path" : "test.csv",
+  "num_labels" : 3,
+  "epochs" : 1,
+  "batch_size" : 32,
+  "learning_rate" : 5e-5,
+  "max_length" : 256,
+  "test_size" : 0.2
+}
