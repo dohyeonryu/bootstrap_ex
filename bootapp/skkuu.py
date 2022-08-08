@@ -35,8 +35,8 @@ class SKKU_SENTIMENT:
 		self.train_data, self.test_data = train_test_split(self.dataset, test_size=self.args.test_size)
 		
 		# Train
-		#self.train()
-		#self.sentiment_classifier = TextClassificationPipeline(tokenizer=self.tokenizer, model=self.model, function_to_apply=self.args.function_to_apply, device=0)
+		self.train()
+		self.sentiment_classifier = TextClassificationPipeline(tokenizer=self.tokenizer, model=self.model, function_to_apply=self.args.function_to_apply, device=0)
 
 
 	def train(self):
