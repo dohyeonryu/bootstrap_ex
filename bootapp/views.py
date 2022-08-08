@@ -6,7 +6,7 @@ from bootapp.skkuu import SKKU_SENTIMENT
 def home(request):
 	skku = SKKU_SENTIMENT()
 	return render(request, 'home.html', {
-		#'skku' : skku("좋아요"),
+		'skku' : skku("좋아요"),
 		'skku_device' : skku.device,
 		'skku_epochs' : skku.args.epochs	
 	})
