@@ -57,6 +57,15 @@ class SKKU_SENTIMENT:
 			for input_ids_batch, attention_masks_batch, y_batch in tqdm(train_loader):
 				
 				optimizer.zero_grad()
+				y_batch = list(y_batch)
+				for i in y_batch:
+					if i == '긍정':
+						i = 2
+					elif i == '부정':
+						i = 0
+					else:
+						i = 1
+				y_batch = tuple(y_batch)
 				y_batch = torch.tensor(y_batch)
 				print(type(y_batch))
 				y_batch = y_batch.type(torch.cuda.LongTensor)
