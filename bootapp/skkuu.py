@@ -65,12 +65,9 @@ class SKKU_SENTIMENT:
 						y_batch[index] = 0
 					else:
 						y_batch[index] = 1
-				for i in y_batch:
-					print(i)
 				y_batch = tuple(y_batch)
 				y_batch = torch.tensor(y_batch)
-				print(type(y_batch))
-				y_batch = y_batch.type(torch.cuda.LongTensor)
+				y_batch = y_batch.type(torch.LongTensor)
 				y_batch = y_batch.to(self.device)
 				#y_batch = tuple(y_batch)
 				y_pred = self.model(input_ids_batch.to(self.device), attention_mask=attention_masks_batch.to(self.device))[0]
