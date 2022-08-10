@@ -57,10 +57,11 @@ class SKKU_SENTIMENT:
 			for input_ids_batch, attention_masks_batch, y_batch in tqdm(train_loader):
 				
 				optimizer.zero_grad()
-				y_batch = list(y_batch)
+				y_batch = torch.tensor(y_batch)
+				print(type(y_batch))
 				y_batch = y_batch.type(torch.cuda.LongTensor)
 				y_batch = y_batch.to(self.device)
-				y_batch = tuple(y_batch)
+				#y_batch = tuple(y_batch)
 				y_pred = self.model(input_ids_batch.to(self.device), attention_mask=attention_masks_batch.to(self.device))[0]
 				loss = F.cross_entropy(y_pred, y_batch)
 				loss.backward()
