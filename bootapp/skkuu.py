@@ -58,13 +58,13 @@ class SKKU_SENTIMENT:
 				
 				optimizer.zero_grad()
 				y_batch = list(y_batch)
-				for i in y_batch:
+				for index, i in enumerate(y_batch):
 					if i == '긍정':
-						i = 2
+						y_batch[index] = 2
 					elif i == '부정':
-						i = 0
+						y_batch[index] = 0
 					else:
-						i = 1
+						y_batch[index] = 1
 				for i in y_batch:
 					print(i)
 				y_batch = tuple(y_batch)
