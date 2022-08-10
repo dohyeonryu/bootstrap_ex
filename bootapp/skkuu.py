@@ -65,6 +65,8 @@ class SKKU_SENTIMENT:
 						i = 0
 					else:
 						i = 1
+				for i in y_batch:
+					print(i)
 				y_batch = tuple(y_batch)
 				y_batch = torch.tensor(y_batch)
 				print(type(y_batch))
